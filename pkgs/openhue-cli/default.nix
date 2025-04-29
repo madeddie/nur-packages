@@ -9,8 +9,8 @@ buildGoModule rec {
 
   src = fetchFromGitHub {
     owner = "openhue";
-    repo = "openhue-cli";
-    rev = "${version}";
+    repo = pname;
+    rev = version;
     hash = "sha256-YkY4AMCvv6IlT1xa8kpTaeTBLhAwnJkqeXWrM+LEQck=";
   };
 
@@ -24,7 +24,8 @@ buildGoModule rec {
     description = "CLI for interacting with Philips Hue smart lighting systems";
     homepage = "https://github.com/openhue/openhue-cli";
     license = licenses.asl20;
-    maintainers = with maintainers; [madeddie];
+    maintainers = with maintainers; [ madeddie ];
+    mainProgram = "openhue";
     platforms = platforms.all;
   };
 }
