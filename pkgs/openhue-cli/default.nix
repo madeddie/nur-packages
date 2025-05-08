@@ -4,14 +4,14 @@
   fetchFromGitHub,
 }:
 
-buildGoModule rec {
+buildGoModule (finalAttrs: {
   pname = "openhue-cli";
   version = "0.17";
 
   src = fetchFromGitHub {
     owner = "openhue";
     repo = "openhue-cli";
-    rev = version;
+    rev = finalAttrs.version;
     hash = "sha256-q+bn47cad98SAIZeR9b9w2c3uXnubIL7fa45BW9cbZ4=";
   };
 
@@ -24,8 +24,8 @@ buildGoModule rec {
   ldflags = [
     "-s"
     "-w"
-    "-X main.version=${version}"
-    "-X main.commit=${rev}"
+    "-X main.version=${finalAttrs.version}"
+    "-X main.commit=${finalAttrs.rev}"
   ];
 
   postInstall = ''
@@ -33,11 +33,11 @@ buildGoModule rec {
   '';
 
   meta = with lib; {
-    changelog = "https://github.com/openhue/openhue-cli/releases/tag/${version}";
+    changelog = "https://github.com/openhue/openhue-cli/releases/tag/${finalAttrs.version}";
     description = "CLI for interacting with Philips Hue smart lighting systems";
     homepage = "https://github.com/openhue/openhue-cli";
     mainProgram = "openhue";
     #maintainers = with maintainers; [ madeddie ];
     license = licenses.asl20;
   };
-}
+})
