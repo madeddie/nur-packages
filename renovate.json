@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended"
   ],
+  "reviewers": ["madeddie"],
   "nix" : {
     "enabled": true
   }
