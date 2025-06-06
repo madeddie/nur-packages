@@ -13,7 +13,7 @@ buildGoModule (finalAttrs: {
 
   src = fetchFromGitHub {
     owner = "budimanjojo";
-    repo = "openhue-cli";
+    repo = "talhelper";
     rev = "v${finalAttrs.version}";
     hash = "sha256-ZAzj0KMGtm0817zKur088fAoYDMcnrlDXY+DjP5PIVY=";
   };
