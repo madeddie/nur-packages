@@ -40,11 +40,11 @@ buildGoModule (finalAttrs: {
     versionCheckHook
   ];
 
-  postInstall = lib.optionalString (stdenv.hostPlatform == stdenv.buildPlatform) ''
-    for shell in bash fish zsh; do
-      $out/bin/talhelper completion $shell > talhelper.$shell
-      installShellCompletion talhelper.$shell
-    done
+  postInstall = ''
+    installShellCompletion --cmd talhelper \
+      --bash <($out/bin/talhelper completion bash) \
+      --fish <($out/bin/talhelper completion fish) \
+      --zsh <($out/bin/talhelper completion zsh)
   '';
 
   meta = with lib; {
