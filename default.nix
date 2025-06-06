@@ -15,4 +15,5 @@
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
   openhue-cli = pkgs.callPackage ./pkgs/openhue-cli {};
+  talhelper = pkgs.callPackage ./pkgs/talhelper {};
 }
