@@ -1,36 +1,31 @@
 {
   lib,
   buildGoModule,
-  fetchFromGitHub,
 }:
 
 buildGoModule (finalAttrs: {
   pname = "porter-cli";
-  version = "0.65.9";
-
-  # src = fetchFromGitHub {
-  #   owner = "porter-dev";
-  #   repo = "code";
-  #   tag = "porter-v${finalAttrs.version}";
-  #   hash = lib.fakeHash;
-  #   private = true;
-  # };
+  version = "latest";
 
   src = fetchGit {
     url = "git@github.com:porter-dev/code.git";
     ref = "main";
-    rev = "74adf85b02dea47beb2c740cea0aaa2bd99f21f3";
-    # ref = "refs/tags/porter-v${finalAttrs.version}";
-    # rev = "108728e0ee448135f8798ff88ca4381717ea7804";
-    # rev = "a0bc65b5d6ba9b987eea84bf3ea31204f2cce98d";
+    rev = "17b4877ceed8c2f008e6ce63bdcac52e30b12c3a";
+    submodules = true;
   };
 
-  # sourceRoot = "legacy-backend";
-  vendorHash = "${lib.fakeHash}";
+  vendorHash = "sha256-VZOK1PpkhX2/ez9dTN33txJOyNDosOk6/HsT4f7AbtQ=";
+
+  doCheck = false;
+  modRoot = "./legacy-backend";
+  subPackages = [ "cli" ];
 
   env.CGO_ENABLED = 0;
+  env.GOWORK = "off";
 
-  # rev = "57399302d867a0c8c0923ce36d81c2fe658a9805";
+  patchPhase = ''
+    sed -i 's/\/\/.*//g' legacy-backend/cli/main.go
+  '';
 
   ldflags = [
     "-s"
@@ -38,9 +33,9 @@ buildGoModule (finalAttrs: {
     "-X github.com/porter-dev/code/legacy-backend/cli/cmd/version.Version=v${finalAttrs.version}"
   ];
 
-  # postInstall = ''
-  #   mv $out/bin/openhue-cli $out/bin/openhue
-  # '';
+  postInstall = ''
+    mv $out/bin/cli $out/bin/porter
+  '';
 
   meta = with lib; {
     changelog = "https://github.com/porter-dev/code/releases/tag/${finalAttrs.version}";
