@@ -16,4 +16,5 @@
   # ...
   openhue-cli = pkgs.callPackage ./pkgs/openhue-cli {};
   talhelper = pkgs.callPackage ./pkgs/talhelper {};
+  porter-cli = pkgs.callPackage ./pkgs/porter-cli {};
 }
