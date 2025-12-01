@@ -14,7 +14,7 @@ buildGoModule (finalAttrs: {
     submodules = true;
   };
 
-  vendorHash = "sha256-VZOK1PpkhX2/ez9dTN33txJOyNDosOk6/HsT4f7AbtQ=";
+  vendorHash = "sha256-/pZg1FFfg5BO8Tfd0bhAGQGQg/Im3cfdKNNNqP7Qa5k=";
 
   doCheck = false;
   modRoot = "./legacy-backend";
