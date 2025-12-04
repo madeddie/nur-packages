@@ -18,6 +18,7 @@ buildGoModule (finalAttrs: {
 
   doCheck = false;
   modRoot = "./legacy-backend";
+  proxyVendor = true;
   subPackages = [ "cli" ];
 
   env.CGO_ENABLED = 0;
