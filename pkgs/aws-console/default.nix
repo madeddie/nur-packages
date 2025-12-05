@@ -15,7 +15,7 @@ buildGo125Module (finalAttrs: {
     hash = "sha256-1bTU0Vj6LULASeEbXr5yY53PWdDFx5LRoWp5hCRmF94=";
   };
 
-  vendorHash = lib.fakeHash;
+  vendorHash = "sha256-P0jKY2kBBV7ZWoPtz+37JgYwRdYan8GkkXadlCTi75k=";
 
   env.CGO_ENABLED = 0;
 
