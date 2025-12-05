@@ -3,7 +3,6 @@
   fetchFromGitHub,
   installShellFiles,
   lib,
-  stdenv,
   versionCheckHook,
 }:
 

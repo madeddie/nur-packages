@@ -18,4 +18,5 @@
   talhelper = pkgs.callPackage ./pkgs/talhelper {};
   porter-cli = pkgs.callPackage ./pkgs/porter-cli {};
   ccp-cli = pkgs.callPackage ./pkgs/ccp-cli {};
+  aws-console = pkgs.callPackage ./pkgs/aws-console {};
 }
