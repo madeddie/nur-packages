@@ -22,14 +22,8 @@ buildGo125Module (finalAttrs: {
   ldflags = [
     "-s"
     "-w"
-    # "-X github.com/joshdk/aws-console/cmd.revision={{ .FullCommit }}"
-    # "-X github.com/joshdk/aws-console/cmd.timestamp={{ .Date }}"
     "-X github.com/joshdk/aws-console/cmd.version=v${finalAttrs.version}"
   ];
-
-  # postInstall = ''
-  #   mv $out/bin/openhue-cli $out/bin/openhue
-  # '';
 
   meta = with lib; {
     changelog = "https://github.com/joshdk/aws-console/releases/tag/v${finalAttrs.version}";
