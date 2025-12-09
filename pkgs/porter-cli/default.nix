@@ -5,12 +5,12 @@
 
 buildGoModule (finalAttrs: {
   pname = "porter-cli";
-  version = "0.65.9";
+  version = "0.65.10";
 
   src = fetchGit {
     url = "git@github.com:porter-dev/code.git";
     ref = "porter-v0.65.9";
-    rev = "108728e0ee448135f8798ff88ca4381717ea7804";
+    rev = "7f88e8ff2ded6c8a4276b14fc65e13e5378c3970";
     submodules = true;
   };
 
