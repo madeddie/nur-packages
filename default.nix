@@ -20,4 +20,8 @@
   ccp-cli = pkgs.callPackage ./pkgs/ccp-cli {};
   aws-console = pkgs.callPackage ./pkgs/aws-console {};
   docker-credential-porter = pkgs.callPackage ./pkgs/docker-credential-porter {};
+  simperium = pkgs.python3Packages.callPackage ./pkgs/simperium {};
+  sncli = pkgs.python3Packages.callPackage ./pkgs/sncli {
+    simperium = pkgs.python3Packages.callPackage ./pkgs/simperium {};
+  };
 }
