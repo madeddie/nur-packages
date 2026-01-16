@@ -24,4 +24,5 @@
   sncli = pkgs.python3Packages.callPackage ./pkgs/sncli {
     simperium = pkgs.python3Packages.callPackage ./pkgs/simperium {};
   };
+  k8s-resource-cli = pkgs.callPackage ./pkgs/k8s-resource-cli {};
 }
