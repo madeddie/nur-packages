@@ -7,13 +7,13 @@
 
 buildGoModule (finalAttrs: {
   pname = "k8s-resource-cli";
-  version = "0.0.4";
+  version = "0.0.5";
 
   src = fetchFromGitHub {
     owner = "madeddie";
     repo = "k8s-resource-cli";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-DFib6IPaLjrSKXAFNvWg+fPFWb2onaZ/Q+FHFFhM9zk=";
+    hash = "sha256-QpToq+W5h+PdVvKFusGxnvmunRe0wcpmLEmqIfZejLY=";
   };
 
   vendorHash = "sha256-gsu57LG318sJEfBcKMkj+XfQihVQmc+1xe0dWDFfBZM=";
