@@ -2,7 +2,6 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
-  go_latest,
 }:
 
 buildGoModule (finalAttrs: {
