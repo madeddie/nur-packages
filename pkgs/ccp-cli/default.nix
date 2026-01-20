@@ -5,7 +5,7 @@
 
 buildGoModule (finalAttrs: {
   pname = "ccp-cli";
-  version = "latest";
+  version = "0.0.25";
 
   src = fetchGit {
     url = "git@github.com:porter-dev/code.git";
