@@ -5,12 +5,12 @@
 
 buildGoModule (finalAttrs: {
   pname = "docker-credential-porter";
-  version = "0.67.0";
+  version = "0.68.2";
 
   src = fetchGit {
     url = "git@github.com:porter-dev/code.git";
     ref = "refs/heads/porter-v${finalAttrs.version}";
-    rev = "f43914923787d2670b1bd3c4235b58c162c678bd";
+    rev = "e85ef012e360ca1737f48640e4d25abbbeb4b395";
     submodules = true;
   };
 
