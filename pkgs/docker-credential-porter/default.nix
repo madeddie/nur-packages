@@ -5,16 +5,16 @@
 
 buildGoModule (finalAttrs: {
   pname = "docker-credential-porter";
-  version = "0.68.4";
+  version = "0.68.9";
 
   src = fetchGit {
     url = "git@github.com:porter-dev/code.git";
     ref = "refs/heads/porter-v${finalAttrs.version}";
-    rev = "7f482640bcf5f1a6f539f44b988f079d7346f58d";
+    rev = "745d06d6d9c708a4eeedf3250beb4387ac1d45d6";
     submodules = true;
   };
 
-  vendorHash = "sha256-s4az01KHbTGq1IdrWM9SKQRpF0dsNpGCsjIoC+rGxRs=";
+  vendorHash = "sha256-RFD00K0CuO47zWUZxIVZbWF7NOuIZMRmbC5uGX+d3LI=";
 
   doCheck = false;
   modRoot = "./legacy-backend";
