@@ -5,16 +5,16 @@
 
 buildGoModule (finalAttrs: {
   pname = "porter-cli";
-  version = "0.68.11";
+  version = "0.68.12";
 
   src = fetchGit {
     url = "git@github.com:porter-dev/code.git";
     ref = "refs/heads/porter-v${finalAttrs.version}";
-    rev = "68887301ae00a3823fcfebf372dea76f20d355bc";
+    rev = "293912d69c54c840ab9beec8d0f2ca57c0d63d80";
     submodules = true;
   };
 
-  vendorHash = "sha256-KJ6e1XdnUUz6ewYU/kLB7rynPqtPKIo8OSbYfF5PmW0=";
+  vendorHash = "sha256-2KNdEqzz6ZR3d6cvW1szcdj2XJkWk4rr+1vsQ/gPyis=";
 
   doCheck = false;
   modRoot = "./legacy-backend";
